@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CVE Results</title>
+</head>
+<body>
+    <h2>CVE Results for {{ entry.vendor }} - {{ entry.name }}</h2>
+    {% if cves %}
+        <ul>
+        {% for cve in cves %}
+            <li>{{ cve.id }}: {{ cve.description }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No CVEs found.</p>
+    {% endif %}
+</body>
+</html>
